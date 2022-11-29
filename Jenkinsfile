@@ -60,8 +60,8 @@ node{
 
   // Override default values based on build status
   if (buildStatus == 'STARTED') {
-    color = 'YELLOW'
-    colorCode = '#FFFF00'
+    color = 'ORANGE'
+    colorCode = '#FFA500'
   } else if (buildStatus == 'SUCCESS') {
     color = 'GREEN'
     colorCode = '#00FF00'
