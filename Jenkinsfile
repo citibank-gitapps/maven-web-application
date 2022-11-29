@@ -3,6 +3,10 @@ node{
  echo "The Job name is: ${env.JOB_NAME}"
  echo "The Build number is: ${env.BUILD_NUMBER}"
  echo "The node name is: ${env.NODE_NAME}"
+ 
+ properties([buildDiscarder(logRotator(artifactDaysToKeepStr: '', artifactNumToKeepStr: '5', daysToKeepStr: '', numToKeepStr: '5')), 
+ [$class: 'JobLocalConfiguration', changeReasonComment: ''], 
+ pipelineTriggers([pollSCM('* * * * *')])])
   
  //checkout code state
  stage('CheckoutCode'){
